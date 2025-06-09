@@ -16,17 +16,9 @@
   programs.zsh.enable = true;
 
   # Passwordless sudo for your user
-  security.sudo.extraRules = [
-    {
-      users = [ "dust" ];  # Replace with your actual username
-      commands = [
-        {
-          command = "ALL";
-          options = [ "NOPASSWD" ];
-        }
-      ];
-    }
-  ];
+  security.sudo.extraConfig = ''
+    dust ALL=(ALL) NOPASSWD: ALL
+  '';
 
   system.primaryUser = "dust";
 
