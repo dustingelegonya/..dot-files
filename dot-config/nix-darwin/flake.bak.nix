@@ -20,20 +20,19 @@
           pkgs.curl
         ];
       nixpkgs.hostPlatform = "aarch64-darwin";
-      nix.useDaemon = true;
       nix.settings.experimental-features = "nix-command flakes";
-      nix.configureBuildUsers = true;
-      services.nix-daemon.enable = true;
       system.configurationRevision = self.rev or self.dirtyRev or null;
       system.stateVersion = 6;
-
+      nix.linux-builder.enable = true;
       programs.zsh.enable = true;
       # programs.fish.enable = true;
       # security.pam.enableSudoTouchIdAuth = true;
-      # users.users.dust.home = "/Users/dust";
       # home-manager.backupFileExtension = "backup";
-
+      # users.users.dust.home = "/Users/dust";
+      system.primaryUser = "dust";
       system.defaults = {
+        alf.globalstate = 1;
+        smb.ServerDescription = "alpha";
         dock.autohide = true;
         dock.mru-spaces = false;
         finder.AppleShowAllExtensions = true;
@@ -55,23 +54,24 @@
 				"exiftool"
 				"stow"
       ];
-
-      environment.systemPackages =
-        [
-          pkgs.vim
-          pkgs.curl
-          pkgs.git
-          pkgs.htop
-          pkgs.bun
-          pkgs.fish
-        ];
     };
   in
   {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#alpha
     darwinConfigurations."alpha" = nix-darwin.lib.darwinSystem {
-      modules = [ configuration ];
+      modules = [
+        configuration
+        {
+            nix.settings.trusted-users = [
+            "root"
+            "@staff"  # all in staff group
+            ];
+
+            # Alternative syntax:
+            # nix.trustedUsers = [ "root" "your-username" "@wheel" ];
+        }
+      ];
     };
   };
 }
