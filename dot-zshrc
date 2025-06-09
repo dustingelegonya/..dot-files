@@ -3,3 +3,8 @@ export PATH="$HOME/.volta/bin:$PATH"
 export STARSHIP_CACHE=~/.starship/cache
 export STARSHIP_CONFIG=~/.starship.toml
 eval "$(starship init zsh)"
+export NIX_PATH=darwin=https://github.com/LnL7/nix-darwin/archive/master.tar.gz:
+export NIX_REMOTE=daemon
+if [ -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then
+  . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+fi
