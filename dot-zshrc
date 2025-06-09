@@ -1,9 +1,4 @@
 #
-
-
-
-
-
 export PATH="$HOME/.volta/bin:$PATH"
 export STARSHIP_CACHE=~/.starship/cache
 export STARSHIP_CONFIG=~/.starship.toml
