@@ -5,9 +5,9 @@ SETUP INSTRUCTIONS
 - [ ] - Download repo to $HOME
 `mv $HOME/dotfiles $HOME/..dotfiles`
 - [ ] - Backup current configs
-`./..dotfiles/run-backup.sh`
+`./..dotfiles/dot-bin/run-backup.sh`
 - [ ] - Run intsall
-`./..dotfiles/run-init.sh`
+`./..dotfiles/dot-binrun-init.sh`
 - [ ] - Istall Fonts
 `cp ~/.fonts/Agave/*.ttf ~/Library/Fonts/`
 - [ ] - Install starship
