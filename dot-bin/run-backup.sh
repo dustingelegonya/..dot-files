@@ -15,8 +15,6 @@ mv $HOME/.zshrc $STOW_BACKUP_DIR/zshrc
 mv $HOME/.zprofile $STOW_BACKUP_DIR/zprofile
 mv $HOME/.gitconfig $STOW_BACKUP_DIR/gitconfig
 
-
-
 # mv Desktop $STOW_BACKUP_DIR/Desktop
 
 echo "remember that currenlty stowed dotfiles will not be backed up becauses they are only aliases."

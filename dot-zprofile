@@ -1,11 +1,11 @@
+# MOSTLY HOMEBREW SETTINGS HERE
 
-
-
-# eval "$(/opt/homebrew/bin/brew shellenv)" eval export HOMEBREW_PREFIX="/opt/homebrew";
-# export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
-# export HOMEBREW_REPOSITORY="/opt/homebrew";
-# fpath[1,0]="/opt/homebrew/share/zsh/site-functions";
-# PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/Users/dust/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin"; export PATH;
-# [ -z "${MANPATH-}" ] || export MANPATH=":${MANPATH#:}";
-# export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
-# eval "$(/opt/homebrew/bin/brew shellenv)"
+HOMEBREW_PATH="~/.homebrew"
+eval "$(~/.homebrew/bin/brew shellenv)" eval export HOMEBREW_PREFIX="~/.homebrew";
+export HOMEBREW_CELLAR="~/.homebrew/Cellar";
+export HOMEBREW_REPOSITORY="~/.homebrew";
+fpath[1,0]="~/.homebrew/share/zsh/site-functions";
+export PATH="$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH";
+[ -z "${MANPATH-}" ] || export MANPATH=":${MANPATH#:}";
+export INFOPATH="$HOME/.homebrew/share/info:${INFOPATH:-}";
+eval "$(~/.homebrew/bin/brew shellenv)"
