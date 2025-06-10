@@ -1,2 +1,5 @@
 .DS_Store
 .zsh_history
+
+dot-config/zed/prompts/*
+dot-config/zed/conversations/*

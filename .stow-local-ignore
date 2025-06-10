@@ -1,4 +1,6 @@
-README.md
+.DS_Store
 .git
-init.sh
-stow.sh
+.gitignore
+.*\.sh
+.*\.bak
+.*\.md
