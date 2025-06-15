@@ -1,8 +1,8 @@
 SETUP INSTRUCTIONS
 ==================
-# https://www.gnu.org/software/stow/manual/stow.html
-# https://github.com/omerxx/dotfiles
-# duck://player/y6XCebnB9gs
+> https://www.gnu.org/software/stow/manual/stow.html
+> https://github.com/omerxx/dotfiles
+> duck://player/y6XCebnB9gs
 
 - [ ] - Backup current configs
 `./..dot-files/dot-bin/run-backup.sh`
