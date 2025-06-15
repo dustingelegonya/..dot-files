@@ -9,7 +9,7 @@
     pkgs.curl
   ];
 
-  nixpkgs.hostPlatform = "aarch64-darwin";
+  nixpkgs.hostPlatform = "aarch64-darwin"; 
   nix.settings.experimental-features = "nix-command flakes";
 
   nix.linux-builder.enable = true;

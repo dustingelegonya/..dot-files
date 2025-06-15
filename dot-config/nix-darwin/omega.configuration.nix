@@ -9,7 +9,7 @@
     pkgs.curl
   ];
 
-  nixpkgs.hostPlatform = "x86_64-darwin";
+  nixpkgs.hostPlatform = "x86_64-darwin"; 
   nix.settings.experimental-features = "nix-command flakes";
 
   nix.linux-builder.enable = true;
@@ -17,14 +17,14 @@
 
   # Passwordless sudo for your user
   security.sudo.extraConfig = ''
-    dust ALL=(ALL) NOPASSWD: ALL
+    indigo ALL=(ALL) NOPASSWD: ALL
   '';
 
-  system.primaryUser = "dust";
+  system.primaryUser = "indigo";
 
   system.defaults = {
     alf.globalstate = 1;
-    smb.ServerDescription = "alpha";
+    smb.ServerDescription = "omega";
     dock.autohide = true;
     dock.mru-spaces = false;
     finder.AppleShowAllExtensions = true;

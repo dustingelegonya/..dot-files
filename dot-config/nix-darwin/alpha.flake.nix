@@ -1,5 +1,5 @@
 {
-  description = "Indigo Gabbro";
+  description = "This configuration is specific to the machine ALPHA and the aarch64 archetecture";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
