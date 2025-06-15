@@ -22,3 +22,8 @@ SETUP INSTRUCTIONS
 `https://github.com/settings/keys`
 - [ ] - Install Volta
 `~/.bin/run-install-volta.sh`
+
+## Setting up Home Manager via Nix-Darwin
+> https://nix-community.github.io/home-manager/#sec-install-nix-darwin-module
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+nix-channel --update
