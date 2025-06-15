@@ -3,25 +3,38 @@ SETUP INSTRUCTIONS
 ## Moving to Nix-Dawin / Home-Manager based dotfiles management
 [https://git.lix.systems/lix-project/lix-installer](ref:install-lix)
 
-## Phase 1: Install Nix (via Lix)
+### Phase 1: Install Nix (via Lix)
 `curl --proto '=https' --tlsv1.2 -sSf -L https://install.lix.systems/lix | sh -s -- install && which nix`
 
-## Phase 2: Install Nix-Darwin
+### Phase 2: Install Nix-Darwin
 [https://github.com/nix-darwin/nix-darwin#readme](ref:nix-darwain)
+> Note: using -vvv will output with the highest level of verbosity (which is great information to have during setup) and you should discontinue use after setup has completed.
+
+#### Need to program some ENV vars:
+
+##### Alpha
+TARGET_FLAKE_ALPHA="alpha.flake.nix"
+TARGET_CONFIG_ALPHA="alpha.configuration.nix"
+
+##### Omega
+TARGET_FLAKE_OMEGA="omega.flake.nix"
+TARGET_CONFIG_OMEGA="omega.configuration.nix"
+
+
+
+
 
 `sudo mkdir -p /etc/nix-darwin`
 `sudo chown $(id -nu):$(id -ng) /etc/nix-darwin`
 
+sudo cp ~/..dot-files/dot-config/nix-darwin/$TARGET_CONFIG_NIX
 
-`ln -s ~/.config/nix-darwin/flake.x86.nix /etc/nix-darwin/flake.nix`
-`ln -s ~/.config/nix-darwin/configuration.nix /etc/nix-darwin/configuration.nix`
-- or -
-`ln -s ~/.config/nix-darwin/configuration.x86.nix /etc/nix-darwin/configuration.nix`
 
 `cd /etc/nix-darwin`
 `sed -i '' "s/simple/$(scutil --get LocalHostName)/" flake.nix`
 
-
+`sudo nix run nix-darwin/master#darwin-rebuild -- switch -vvv` 
+`sudo darwin-rebuild switch -vvv` 
 
 ### Installing Home-Manager 
 > Important: this is specific to installation that resides on top of Nix-Dawin, which varies significantly from an installation residing directly on top of Nix
