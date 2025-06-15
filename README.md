@@ -1,12 +1,25 @@
 SETUP INSTRUCTIONS
 ==================
 ## Moving to Nix-Dawin / Home-Manager based dotfiles management
+[https://git.lix.systems/lix-project/lix-installer](ref:install-lix)
 
-### Installing Nix (Lix)
+## Phase 1: Install Nix (via Lix)
+`curl --proto '=https' --tlsv1.2 -sSf -L https://install.lix.systems/lix | sh -s -- install && which nix`
+
+## Phase 2: Install Nix-Darwin
+[https://github.com/nix-darwin/nix-darwin#readme](ref:nix-darwain)
+
+`sudo mkdir -p /etc/nix-darwin`
+`sudo chown $(id -nu):$(id -ng) /etc/nix-darwin`
 
 
+`ln -s ~/.config/nix-darwin/flake.x86.nix /etc/nix-darwin/flake.nix`
+`ln -s ~/.config/nix-darwin/configuration.nix /etc/nix-darwin/configuration.nix`
+- or -
+`ln -s ~/.config/nix-darwin/configuration.x86.nix /etc/nix-darwin/configuration.nix`
 
-### Installing Nix-Darwin
+`cd /etc/nix-darwin`
+`sed -i '' "s/simple/$(scutil --get LocalHostName)/" flake.nix`
 
 
 
