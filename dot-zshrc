@@ -1,25 +1,21 @@
 #!/usr/bin/env zsh
-#info: the master of this file(alias) resides at ~/..dot-files/dot-zshrc
-### MAP BINS
-DOTFILES_PATH=$HOME/..dotfiles
-HOMEBREW_INSTALL_PATH=$HOME/.homebrew
-VOLTA_INSTALL_PATH=~$HOME/.volta
-DOCKER_VMS_PATH=$HOME/.docker-vms
-DOTS=$DOTFILES_PATH
-### MAP DRIVES
-ICLOUD_PATH=~/Library/Mobile\ Documents/com\~apple\~CloudDocs
-PERSONAL_DRIVE="/Volumes/Personal-Drive"
+# Info: the master of this file(alias) resides at ~/..dot-files/dot-zshrc
 
-#export PATH="$HOME/.volta/bin:$PATH"
+### PATHS
+DOTFILES_PATH=~/..dotfiles
+VOLTA_PATH=~/.volta
+# HOMEBREW_PATH=~/.homebrew
+# DOCKER_VMS_PATH=~/.docker-vms
+# ICLOUD_DRIVE_PATH=~/Library/Mobile\ Documents/com\~apple\~CloudDocs
+# PERSONAL_DRIVE_PATH="/Volumes/Personal-Drive"
 
-#alias darwin-rebuild='nix run nix-darwin/nix-darwin-24.11#darwin-rebuild --'
-#alias darwin-rebuild='switch --flake .#alpha'
+export PATH="~/.volta/bin:$PATH"
+
 alias reload='source $DOTFILES_PATH/dot-zshrc'
 alias cl=clear
-alias ls="ls -la"
 
 # Brew (https://docs.brew.sh/Installation#multiple-installations-unsupported)
-eval "$($HOMEBREW_INSTALL_PATH/bin/brew shellenv)"
+# eval "$($HOMEBREW_PATH/bin/brew shellenv)"
 
 # Load this last
 eval "$(starship init zsh)"
